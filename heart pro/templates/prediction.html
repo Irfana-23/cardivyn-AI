@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f8fb;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 650px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #1565c0;
+            margin-bottom: 25px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input:focus, select:focus {
+            border-color: #1565c0;
+            outline: none;
+        }
+
+        .predict-btn {
+            width: 100%;
+            padding: 12px;
+            margin-top: 25px;
+            background-color: #1565c0;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        .predict-btn:hover {
+            background-color: #0d47a1;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Heart Disease Prediction</h1>
+
+    <form action="{{ url_for('predict') }}" method="POST">
+
+        <!-- 1. Age -->
+        <label for="age">Age</label>
+        <input type="number" id="age" name="age" min="1" required>
+
+        <!-- 2. Sex -->
+        <label for="sex">Sex</label>
+        <select id="sex" name="sex" required>
+            <option value="">Select Sex</option>
+            <option value="1">Male</option>
+            <option value="0">Female</option>
+        </select>
+
+        <!-- 3. Chest Pain Type -->
+        <label for="cp">Chest Pain Type</label>
+        <select id="cp" name="cp" required>
+            <option value="">Select Chest Pain Type</option>
+            <option value="0">Typical Angina</option>
+            <option value="1">Atypical Angina</option>
+            <option value="2">Non-anginal Pain</option>
+            <option value="3">Asymptomatic</option>
+        </select>
+
+        <!-- 4. Resting Blood Pressure -->
+        <label for="trestbps">Resting Blood Pressure (mm Hg)</label>
+        <input type="number" id="trestbps" name="trestbps"
+               min="50" max="250" required>
+
+        <!-- 5. Cholesterol -->
+        <label for="chol">Serum Cholesterol (mg/dl)</label>
+        <input type="number" id="chol" name="chol"
+               min="50" max="700" required>
+
+        <!-- 6. Fasting Blood Sugar -->
+        <label for="fbs">Fasting Blood Sugar > 120 mg/dl</label>
+        <select id="fbs" name="fbs" required>
+            <option value="">Select</option>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select>
+
+        <!-- 7. Resting ECG -->
+        <label for="restecg">
+            Resting Electrocardiographic Results
+        </label>
+
+        <select id="restecg" name="restecg" required>
+            <option value="">Select Result</option>
+            <option value="0">Normal</option>
+            <option value="1">ST-T Wave Abnormality</option>
+            <option value="2">Left Ventricular Hypertrophy</option>
+        </select>
+
+        <!-- 8. Maximum Heart Rate -->
+        <label for="thalach">
+            Maximum Heart Rate Achieved
+        </label>
+
+        <input type="number" id="thalach" name="thalach"
+               min="50" max="250" required>
+
+        <!-- 9. Exercise Induced Angina -->
+        <label for="exang">Exercise Induced Angina</label>
+
+        <select id="exang" name="exang" required>
+            <option value="">Select</option>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select>
+
+        <!-- 10. Oldpeak -->
+        <label for="oldpeak">
+            Oldpeak (ST Depression)
+        </label>
+
+        <input type="number" id="oldpeak" name="oldpeak"
+               step="0.1" min="0" max="10" required>
+
+        <!-- 11. Slope -->
+        <label for="slope">
+            Slope of Peak Exercise ST Segment
+        </label>
+
+        <select id="slope" name="slope" required>
+            <option value="">Select Slope</option>
+            <option value="0">Upsloping</option>
+            <option value="1">Flat</option>
+            <option value="2">Downsloping</option>
+        </select>
+
+        <!-- 12. Number of Major Vessels -->
+        <label for="ca">
+            Number of Major Vessels (0-3)
+        </label>
+
+        <select id="ca" name="ca" required>
+            <option value="">Select Number</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+
+        <!-- 13. Thal -->
+        <label for="thal">Thalassemia</label>
+
+        <select id="thal" name="thal" required>
+            <option value="">Select Thalassemia Type</option>
+            <option value="1">Normal</option>
+            <option value="2">Fixed Defect</option>
+            <option value="3">Reversible Defect</option>
+        </select>
+
+        <!-- Predict Button -->
+        <button type="submit" class="predict-btn" >
+            Predict Heart Disease
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

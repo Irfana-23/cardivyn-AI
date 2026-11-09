@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About CardiVyn AI</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f8fb;
+            margin: 0;
+            padding: 40px 20px;
+            color: #1f2937;
+        }
+
+        .about-box {
+            max-width: 850px;
+            margin: auto;
+            background: white;
+            padding: 40px;
+            border-radius: 18px;
+            box-shadow: 0 5px 18px #ddd;
+        }
+
+        h1, h2 {
+            color: #2563eb;
+        }
+
+        p {
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .back {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 22px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="about-box">
+
+    <h1>About CardiVyn AI</h1>
+
+    <p>
+        CardiVyn AI is an AI-powered heart disease prediction
+        system developed using an Artificial Neural Network (ANN).
+        It analyses patient health parameters to estimate the
+        likelihood of heart disease.
+    </p>
+
+    <h2>How Does It Work?</h2>
+
+    <p>
+        Users enter 13 health-related parameters, including age,
+        cholesterol, blood pressure and maximum heart rate.
+        The trained ANN model processes these inputs and generates
+        a prediction.
+    </p>
+
+    <h2>Technology Used</h2>
+
+    <p>
+        Python, TensorFlow, Keras, Scikit-learn, Flask,
+        HTML and CSS.
+    </p>
+
+    <h2>Our Objective</h2>
+
+    <p>
+        To demonstrate how Artificial Intelligence can be used
+        for preliminary heart disease risk assessment.
+    </p>
+
+    <p>
+        This application is for educational purposes only and
+        does not replace professional medical advice.
+    </p>
+
+    <a class="back" href="{{ url_for('home') }}">Back to Home</a>
+
+</div>
+
+</body>
+</html>
+```

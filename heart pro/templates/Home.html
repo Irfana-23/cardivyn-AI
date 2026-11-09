@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heart Disease Prediction</title>
+<link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+<nav>
+<div class="logo"><i class="fa-solid fa-heart-pulse"></i>CardiVyn AI</div>
+<ul>
+
+<a class="btn" href="{{ url_for('prediction_page') }}">Predict Now</a>
+</nav>
+
+<section class="hero">
+<div class="left">
+<h1>AI-Powered <span>Heart Disease</span> Prediction System</h1>
+<p>Predict heart disease risk using an Artificial Neural Network with a modern, secure and easy-to-use interface.</p>
+<div class="actions">
+<a class="btn" href="{{ url_for('prediction_page') }}">Get Started</a>
+<a class="btn outline" href="{{ url_for('about_page') }}">
+    Learn More
+</a>
+</div>
+<div class="stats">
+<div class="card"><h2>91.9%</h2><p>Accuracy</p></div>
+<div class="card"><h2>ANN</h2><p>AI Model</p></div>
+<div class="card"><h2>24/7</h2><p>Support</p></div>
+<div class="card"><h2>Fast</h2><p>Prediction</p></div>
+</div>
+</div>
+<div class="right">
+<img src="{{ url_for('static', filename='cardioai_hero_image.png') }}" alt="AI Heart">
+</div>
+</section>
+
+
+
+
+</section>
+</body>
+</html>
